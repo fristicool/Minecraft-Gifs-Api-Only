@@ -32,4 +32,8 @@ wss.on('connection', function connection(ws) {
     });
 });
 
+app.get('/', function (req, res) {
+    res.send('hello world')
+})
+
 server.listen(3003, () => console.log('Port :3003'))
