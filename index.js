@@ -36,4 +36,4 @@ app.get('/', function (req, res) {
     res.send('hello world')
 })
 
-server.listen(3003, () => console.log('Port :3003'))
+server.listen(process.env.PORT, () => console.log('Port :3003'))
