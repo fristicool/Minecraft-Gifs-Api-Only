@@ -20,7 +20,7 @@ wss.on('connection', function connection(ws) {
         request(`https://api.giphy.com/v1/gifs/search?api_key=jEcmFUpzZFnioiuyze2S4TerUnVvDNT4&q=${message}&limit=25&offset=0&rating=g&lang=en`, { json: true }, (err, res, body) => {
             if (err) { return console.log(err); }
             else {
-                if (body.data.length > 0) {
+                if (body.data.length > 0 && message != 'next40s') {
                     wss.clients.forEach(function each(client) {
                         returnURL = body.data[0].images.downsized.url
         
